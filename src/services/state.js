@@ -49,8 +49,8 @@ export class BotState {
             websocketUrl: process.env.WEBSOCKET_URL,
             websocketOrigin: process.env.WEBSOCKET_ORIGIN,
             openaiApiKey: process.env.OPENAI_KEY,
-            owners: JSON.parse(process.env.BOT_OWNERS),
-            disabledPowers: JSON.parse(process.env.DISABLED_POWERS),
+            owners: JSON.parse(process.env.BOT_OWNERS || '[]'),
+            disabledPowers: JSON.parse(process.env.DISABLED_POWERS || '[]'),
         };
 
         // Each account needs its own login-session file so multiple accounts
