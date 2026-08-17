@@ -256,7 +256,7 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
     // i svaki pokuša da napravi isti red u bazi.
     await Settings.findOrCreate({ where: { id: 1 }, defaults: { id: 1 } });
 
-    const accounts = await Account.findAll();
+    const accounts = await Account.findAll({ order: [['createdAt', 'ASC']] });
 
     // Jednokratno seedovanje: ako baza još nema NIJEDAN nalog (prvo ikad
     // pokretanje), ubaci startne naloge. Posle toga sve ide preko panela.
